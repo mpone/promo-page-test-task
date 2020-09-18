@@ -1,5 +1,6 @@
 'use strict';
 
+// eslint-disable-next-line no-undef
 Vue.component('main-page-form', {
   template: '#form-template',
   data() {
@@ -29,6 +30,7 @@ Vue.component('main-page-form', {
   },
 });
 
-new Vue({
+// eslint-disable-next-line no-undef
+new Vue({ // eslint-disable-line no-new
   el: '#form',
 });
