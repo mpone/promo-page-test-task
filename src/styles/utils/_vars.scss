@@ -1,1 +1,49 @@
-$c-gray: #eee;
+// -----Viewport breakpoints
+$largeScreenSize: 2559px;
+$fhdScreenSize: 1919px;
+$notebookScreenSize: 1279px;
+$tabletScreenSize: 1023px;
+$portableScreenSize: 767px;
+$smallScreenSize: 565px;
+$mobileScreenSize: 320px;
+
+// -----Viewport container
+$largeScreenSizeMargin: 15%;
+$fhdScreenSizeMargin: 10%;
+
+// -----Colors
+// main
+$mainBgColor: #fff;
+$headerBgColor: #fdde00;
+// buttons
+$buttonBgColor: #001515;
+$buttonBgHoverColor: rgb(230, 230, 230);
+
+// -----Transitions/Animations
+$mockupSizingAnim: 0.5s;
+$elemHoverAnimTime: 0.2s;
+
+// -----Default
+$sGap: 5px;
+$mGap: 10px;
+$bigGap: 100px;
+
+// -----Header
+$headerDefaultHeight: 100vh;
+$headerBgHeight: 100vh;
+$headerBgWidth: 65vw;
+$headerBgNotebookWidth: 70vw;
+$headerBgTabletWidth: 85vw;
+$headerBgPortableWidth: 90vw;
+$headerLeftSideLargeW: 710px;
+$headerLeftSideNotebookW: 570px;
+$headerLeftSidePortableW: 65vw;
+
+$headerPhoneLargeH: 500px;
+$headerTabletLargeH: 600px;
+
+// -----Form
+$formElemHeight: 55px;
+$formElemNotebookHeight: 50px;
+$formElemPortableHeight: 40px;
+$formButtonLargeWidth: 330px;

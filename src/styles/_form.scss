@@ -1,0 +1,104 @@
+.form {
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: $portableScreenSize) {
+    max-width: 380px;
+  }
+
+  &__text-fields {
+    display: flex;
+    margin-bottom: $mGap * 5;
+    transition: margin-bottom $mockupSizingAnim;
+
+    @media (max-width: $notebookScreenSize) {
+      margin-bottom: $mGap * 4;
+    }
+  
+    @media (max-width: $portableScreenSize) {
+      flex-direction: column;
+      width: auto;
+      margin-bottom: $mGap * 2;
+    }
+  }
+
+  &__text-field,
+  &__button {
+    padding: 0 $mGap;
+    height: $formElemHeight;
+    font-family: SegoeUI, sans-serif;
+    border-radius: 5px;
+    border: none;
+
+    @media (max-width: $notebookScreenSize) {
+      height: $formElemPortableHeight;
+    }
+
+    @media (max-width: $portableScreenSize) {
+      height: $formElemPortableHeight;
+    }
+  }
+
+  &__text-field {
+    flex: 1 1 auto;
+    margin-right: $sGap * 5;
+    transition: border-color $elemHoverAnimTime;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &::placeholder {
+      font-size: 16px;
+    }
+
+    @media (max-width: $notebookScreenSize) {
+
+      &::placeholder {
+        font-size: 14px;
+      }
+    }
+  
+    @media (max-width: $portableScreenSize) {
+      margin-right: 0;
+      margin-bottom: $mGap;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__button {
+    width: $formButtonLargeWidth;
+
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 0;
+    color: #fff;
+    background-color: $buttonBgColor;
+    box-shadow: 0 10px 12px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color $mockupSizingAnim,
+      width $mockupSizingAnim,
+      color $mockupSizingAnim;
+
+    &:hover {
+      background-color: $buttonBgHoverColor;
+      color: #000;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    @media (max-width: $portableScreenSize) {
+      width: 100%;
+      font-size: 14px;
+    }
+  }
+}

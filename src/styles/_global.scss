@@ -1,0 +1,19 @@
+body {
+  background: $mainBgColor;
+}
+
+.content-container {
+  margin-left: $largeScreenSizeMargin;
+  margin-right: $largeScreenSizeMargin;
+  transition: margin-left $mockupSizingAnim,
+    margin-right $mockupSizingAnim;
+
+  @media (max-width: $fhdScreenSize) {
+    margin-left: $fhdScreenSizeMargin;
+    margin-right: $fhdScreenSizeMargin;
+  }
+}
+
+.capital-letters {
+  text-transform: uppercase;
+}

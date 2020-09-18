@@ -1,0 +1,238 @@
+.header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: $headerDefaultHeight;
+  overflow: hidden;
+
+  &__background {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: $headerBgWidth;
+    height: $headerBgHeight;
+    background-color: $headerBgColor;
+    transition: width $mockupSizingAnim;
+
+    @media (max-width: $notebookScreenSize) {
+      width: $headerBgNotebookWidth;
+    }
+
+    @media (max-width: $tabletScreenSize) {
+      width: $headerBgTabletWidth;
+    }
+  
+    @media (max-width: $portableScreenSize) {
+      width: $headerBgPortableWidth;
+    }
+  }
+
+  &__content {
+    display: flex;
+  }
+
+  &__left-side {
+    z-index: 1;
+    width: $headerLeftSideLargeW;
+    margin-right: $mGap * 4;
+
+    @media (max-width: $notebookScreenSize) {
+      width: $headerLeftSideNotebookW;
+    }
+  
+    @media (max-width: $portableScreenSize) {
+      width: $headerLeftSidePortableW;
+      margin-right: $mGap * 3;
+    }
+  }
+
+  &__title {
+    margin-bottom: $sGap * 6;
+    font-size: 64px;
+    font-weight: 400;
+    letter-spacing: -1.92px;
+    transition: font-size $mockupSizingAnim;
+  
+    @media (max-width: $notebookScreenSize) {
+      margin-bottom: $sGap * 5;
+      font-size: 48px;
+    }
+  
+    @media (max-width: $portableScreenSize) {
+      margin-bottom: $sGap * 2;
+      font-size: 36px;
+    }
+
+    @media (max-width: $smallScreenSize) {
+      font-size: 44px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    margin-bottom: $mGap * 5;
+    transition: margin-bottom $mockupSizingAnim;
+
+    @media (max-width: $notebookScreenSize) {
+      margin-bottom: $mGap * 4;
+    }
+  
+    @media (max-width: $portableScreenSize) {
+      flex-direction: column;
+      width: auto;
+      margin-bottom: $mGap * 2;
+      font-size: 24px;
+    }
+  }
+
+  &__clients {
+
+    @media (max-width: $portableScreenSize) {
+      display: flex;
+      align-items: center;
+      padding-bottom: $mGap;
+      margin-bottom: $mGap;
+      max-width: $bigGap * 2 + $mGap;
+      border-bottom: 4px solid;
+    }
+  }
+
+  &__clients-quantity {
+    font-size: 75px;
+    letter-spacing: -2.25px;
+    line-height: 100%;
+
+    @media (max-width: $notebookScreenSize) {
+      font-size: 60px;
+    }
+  
+    @media (max-width: $portableScreenSize) {
+      margin-right: $mGap;
+      font-size: 44px;
+    }
+  }
+
+  &__clients-text {
+    padding-right: $sGap * 8;
+
+    font-size: 36px;
+    letter-spacing: -1.08px;
+    line-height: 100%;
+
+    @media (max-width: $notebookScreenSize) {
+      padding-right: $sGap * 6;
+      font-size: 30px;
+    }
+  
+    @media (max-width: $portableScreenSize) {
+      padding-right: 0;
+      font-size: 24px;
+      line-height: 0;
+    }
+  }
+
+  &__text {
+    align-self: center;
+    margin-top: $mGap;
+    padding-left: $mGap * 2;
+    border-left: 6px solid;
+
+    @media (max-width: $notebookScreenSize) {
+      margin-top: 0;
+      border-left: 4px solid;
+      font-size: 16px;
+    }
+  
+    @media (max-width: $portableScreenSize) {
+      align-self: start;
+      padding-left: 0;
+      font-size: 14px;
+      border-left: 0;
+    }
+  }
+
+  &__subtitle {
+    padding-bottom: $sGap * 3;
+
+    font-size: 34px;
+    letter-spacing: -1.02px;
+    line-height: 1.5rem;
+
+    @media (max-width: $notebookScreenSize) {
+      padding-bottom: $sGap * 2;
+      font-size: 30px;
+    }
+  
+    @media (max-width: $portableScreenSize) {
+      font-size: 24px;
+    }
+  }
+
+  &__explanation {
+    &--bold {
+      display: block;
+      font-weight: bold;
+
+      @media (max-width: $smallScreenSize) {
+        display: inline;
+      }
+    }
+  }
+
+  &__title,
+  &__clients-quantity,
+  &__clients-text,
+  &__subtitle,
+  &__text {
+    transition: font-size $mockupSizingAnim;
+  }
+
+  &__images {
+    position: relative;
+    display: flex;
+    margin-top: -($mGap * 6);
+    transition: margin-top $mockupSizingAnim;
+  
+    @media (max-width: $portableScreenSize) {
+      flex-direction: column;
+      margin-top: -($mGap * 3);
+    }
+
+    @media (max-width: $smallScreenSize) {
+      margin-top: 0;
+    }
+  }
+
+  &__img {
+    position: absolute;
+  }
+
+  &__img-phone,
+  &__img-tablet {
+    background: linear-gradient(135deg,
+    rgba(0, 0, 0, 0.03),
+    rgba(0, 0, 0, 0.35));
+    border-radius: 30px;
+    transition: transform $mockupSizingAnim;
+  }
+
+  &__img-phone {
+    height: $headerPhoneLargeH;
+    box-shadow: 40px 30px 80px rgba(0, 0, 0, 0.3);
+
+    @media (max-width: $portableScreenSize) {
+      transform: translate(0, -($bigGap * 4));
+    }
+  }
+
+  &__img-tablet {
+    height: $headerTabletLargeH;
+    box-shadow: 40px 30px 80px rgba(0, 0, 0, 0.3);
+    transform: translateX($bigGap * 3);
+
+    @media (max-width: $portableScreenSize) {
+      transform: translate(0, $bigGap * 2);
+    }
+  }
+}
